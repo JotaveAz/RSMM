@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Multimarcas</title>
+    <link rel="stylesheet" href="styleb.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RS Multimarcas</div>
+        <nav>
+            <a href="#" id="cart-btn">Carrinho (<span id="cart-count">0</span>)</a>
+            <button id="add-product-btn">Adicionar Produtos</button> <!-- Botão para adicionar produtos -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-section">
+            <h1>Camisas Premium</h1>
+            <div id="product-list" class="product-list"></div>
+        </section>
+
+        <section class="add-product" id="add-product-section" style="display: none;">
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Nome do Produto" required>
+                <input type="text" id="product-price" placeholder="Preço" required>
+                <input type="file" id="product-image" required>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </section>
+
+        <!-- Modal do Carrinho -->
+        <div class="cart-modal" id="cart-modal">
+            <h2>Carrinho</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total">Total: R$ 0.00</p>
+            <button id="close-cart-btn">Fechar</button>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+
+        <div id="notification" style="display:none; position:fixed; bottom:20px; right:20px; background-color:#e60e0e; color:white; padding:10px; border-radius:5px;"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 RS Multimarcas. Developed by jotavecreative.</p>
+    </footer>
+
+    <script src="scriptb.js"></script>
+</body>
+</html>

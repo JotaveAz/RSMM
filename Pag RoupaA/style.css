@@ -1,0 +1,203 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #F5F5F5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e60e0e;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 100px 20px;
+    color: #000;
+    background-image: url(bg\ \(2\).png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.product-carousel {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+}
+
+.product-carousel h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-content {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.carousel-item {
+    min-width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-item p {
+    margin-top: 10px;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e60e0e;
+}
+
+.carousel-btn:hover {
+    color: #000;
+}
+
+.carousel-btn:disabled {
+    color: rgba(204, 204, 204, 0.5);
+    cursor: not-allowed;
+}
+
+/* Rodapé */
+footer {
+    padding: 20px;
+    background: #000;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-btn {
+    background-color: #e60e0e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #fff;
+    color: #e60e0e;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .carousel-content {
+        width: 100%;
+    }
+
+    .carousel-item {
+        min-width: 200px;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .product-carousel h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 150px;
+    }
+
+    .banner {
+        padding: 50px 10px;
+    }
+}

@@ -1,0 +1,333 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Certifica-se de que o HTML e o corpo ocupem 100% da altura da tela */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo na coluna */
+    justify-content: space-between; /* Espaça o conteúdo e coloca o rodapé na parte inferior */
+    font-family: Arial, sans-serif;
+    background: #F5F5F5;
+    color: #333;
+    padding-top: 80px; /* Adiciona espaço para o cabeçalho fixo */
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    position: fixed; /* Fixa o cabeçalho */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e60e0e;
+}
+
+/* Seção de produtos */
+.product-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.product-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Estilo para os cartões de produto */
+.product-card {
+    position: relative; /* Para posicionar o botão de excluir */
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%; /* Mantém a largura total do cartão */
+    height: auto; /* Define a altura automática para manter a proporção */
+    object-fit: contain; /* Ajusta a imagem para caber no contêiner sem cortar */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 10px;
+}
+
+/* Aba de Adicionar Produto */
+.add-product {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #000000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Alinha os itens na coluna */
+    align-items: center; /* Centraliza os itens */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .add-product {
+        padding: 5px; /* Diminui o padding em telas pequenas */
+    }
+
+    .add-product form {
+        flex-direction: column; /* Alinha os campos em coluna */
+        max-width: 90%; /* Largura máxima para o formulário */
+    }
+
+    .add-product input[type="text"], 
+    .add-product input[type="file"] {
+        max-width: 100%; /* Permite que os campos ocupem toda a largura */
+        margin-bottom: 10px; /* Espaço entre os campos */
+    }
+
+    .add-product button {
+        width: 100%; /* Botões ocupam toda a largura */
+        padding: 10px; /* Aumenta o padding */
+    }
+}
+
+.add-product h2 {
+    margin-bottom: 10px;
+}
+
+.add-product form {
+    display: flex; /* Alinha os itens na horizontal */
+    align-items: center; /* Centraliza verticalmente os itens */
+    gap: 10px; /* Espaço entre os campos */
+    max-width: 800px; /* Ajusta a largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+.add-product input[type="text"], 
+.add-product input[type="file"] {
+    padding: 8px; /* Diminui o padding nos campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1; /* Faz os campos ocuparem o mesmo espaço */
+    max-width: 300px; /* Limita a largura dos campos */
+}
+
+.add-product button {
+    padding: 10px 20px; /* Aumenta o padding para expandir o botão */
+    background-color: #e60e0e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex; /* Permite o alinhamento flexível dos itens dentro do botão */
+    align-items: center; /* Centraliza verticalmente os itens */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    white-space: nowrap; /* Garante que o texto não quebre a linha */
+}
+
+/* Estilo para o botão "Adicionar Produtos" */
+#add-product-btn {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    padding: 10px 15px; /* Diminuindo o padding do botão */
+    background-color: rgba(235, 18, 18, 0.2); /* Cor de fundo com um pouco de transparência */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte reduzido */
+    font-weight: normal; /* Texto normal */
+    cursor: pointer; /* Mão ao passar o mouse */
+    transition: background-color 0.3s, transform 0.2s; /* Transições para efeitos */
+}
+
+#add-product-btn:hover {
+    background-color: rgba(230, 14, 14, 1); /* Cor de fundo ao passar o mouse */
+    transform: translateY(-1px); /* Leve elevação ao passar o mouse */
+}
+
+/* Estilo para os cartões de produto */
+.product-card {
+    position: relative; /* Para posicionar o botão de excluir */
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%; /* Mantém a largura total do cartão */
+    height: auto; /* Define a altura automática para manter a proporção */
+    object-fit: contain; /* Ajusta a imagem para caber no contêiner sem cortar */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1.1em;
+    color: #e60e0e;
+    margin-bottom: 10px;
+}
+
+.btn-buy {
+    background-color: #e60e0e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #000;
+}
+
+/* Estilo para o botão de excluir */
+.btn-delete {
+    background-color: #e60e0e; /* Vermelho */
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 50%; /* Borda arredondada */
+    width: 30px; /* Largura fixa */
+    height: 30px; /* Altura fixa */
+    cursor: pointer; /* Mão ao passar o mouse */
+    position: absolute; /* Para posicionar o botão */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Centraliza o texto */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.btn-delete:hover {
+    background-color: #c00; /* Tom de vermelho mais escuro ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    padding: 20px;
+    background: #000;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+/* Modal do Carrinho */
+.cart-modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fixo na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Compensa o tamanho do modal */
+    background-color: white; /* Cor de fundo do modal */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra do modal */
+    z-index: 1001; /* Coloca o modal acima de outros elementos */
+}
+
+.cart-modal h2 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.cart-modal button {
+    margin-top: 10px; /* Espaço acima do botão */
+    padding: 10px 15px; /* Padding do botão */
+    background-color: #e60e0e; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.cart-modal button:hover {
+    background-color: #c70000; /* Cor ao passar o mouse */
+}
+
+/* Notificações */
+#notification {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fixo na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    background-color: #e60e0e; /* Cor de fundo da notificação */
+    color: white; /* Cor do texto */
+    padding: 10px; /* Padding da notificação */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Adicionando responsividade */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+    }
+
+    /* Ajustes para a aba de adicionar produto */
+    .add-product form {
+        flex-direction: column; /* Alinha os campos em coluna */
+    }
+
+    .product-card {
+        margin: 10px; /* Adiciona espaço entre os cartões */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .product-card h3 {
+        font-size: 1.1em; /* Reduz o tamanho do título */
+    }
+
+    .product-card p {
+        font-size: 1em; /* Reduz o tamanho da descrição */
+    }
+}

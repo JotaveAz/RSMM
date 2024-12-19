@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">RS Multimarcas</div>
+    <nav>
+        <a href="#" id="home-btn">Home</a>
+        <a href="https://wa.me/5522998868822" target="_blank" class="whatsapp-btn">Whatsapp</a>
+    </nav>
+</header>
+
+<section class="banner">
+</section>
+
+<!-- Carrossel de produtos -->
+<section class="product-carousel">
+    <h2>NOSSO CATÁLOGO</h2>
+    <div class="carousel">
+        <button class="carousel-btn prev">◀</button>
+        <div class="carousel-content">
+            <a href="../ABA CAMISAS PremiumB/indexb.html" class="carousel-item">
+                <img src="basic camisa.png" alt="Produto 1">
+                <p>Camisas Premium</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+            <a href="../ABA PERUANAF/indexf.html" class="carousel-item">
+                <img src="CAMISANIKE.png" alt="Produto 2"> 
+                <p>Camisas Peruanas</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+            <a href="../ABA JEANSE/indexe.html" class="carousel-item">
+                <img src="calça.png" alt="Produto 3">
+                <p>Calças</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+            <a href="../ABA TENISG/indexg.html" class="carousel-item">
+                <img src="TENIS.png" alt="Produto 6">
+                <p>Tenis</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+            <a href="../ABA JEANSE/indexe.html" class="carousel-item">
+                <img src="SHORTS.png" alt="Produto 5">
+                <p>Shorts</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+            <a href="../ABA ACESSORIOSC/indexc.html" class="carousel-item">
+                <img src="CASACO.png" alt="Produto 4">
+                <p>Acessórios</p>
+                <p>A partir de R$ 00,00</p>
+            </a>
+        </div>
+        <button class="carousel-btn next">▶</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 RS Multimarcas. Desenvolvido por: @jotavecreative</p>
+</footer>
+
+<script>
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const carouselContent = document.querySelector('.carousel-content');
+    const homeBtn = document.getElementById('home-btn');
+
+    prevBtn.addEventListener('click', () => {
+        carouselContent.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        carouselContent.scrollBy({ left: 150, behavior: 'smooth' });
+    });
+
+    homeBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita o comportamento padrão do link
+        location.reload(); // Atualiza a página
+    });
+</script>
+
+</body>
+</html>
